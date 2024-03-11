@@ -1,11 +1,54 @@
 'use client';
 import styles from "./page.module.css";
+import { useState } from "react";
 
 export default function Home(){
+    const [text, setText] = useState('');
+    const [gptContent, setGptContent] = useState('');
+
+    function onFileChange(event){
+      const file = event.target.files[0];
+      const fileReader = new FileReader();
+      fileReader.onload = onLoadFile;
+      fileReader.readAsArrayBuffer(file);
+
+    }
+
+      function onLoadFile(event){
+        const typedarray = new Uint8Array(event.target.result);
+        pdfjsLib.getDocument({
+          data: typedarray
+        }).promise.then((pdf) => {
+          console.log("PDF loaded");
+          pdf.getPage(1).then((page) =>{
+            page.getTextContent().then((Content) =>{
+              let outputText = '';
+              Content.items.forEach((item) =>{
+                outputText += item.str + ' ';
+              });
+              setText(outputText);
+              console.log(outputText);
+          });
+        });
+      });
+    }
+      
+
     return (
       <main className={styles.main} >
 
+      <h1>AI Summariser</h1>
+      <input type="file"
+       id="file" 
+       onChange={onFileChange}
+       name = 'file'
+
+        accept = ".pdf"/>
+
+
+
       <button
+      
      onClick={async() => {
       const response = await fetch("/api/gpt",{
         method: "POST",
@@ -13,16 +56,19 @@ export default function Home(){
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          someData: true
+          text
         }),
       });
-      console.log("Response",response)
+      const gptResponse = await response.json();
+      console.log("Response",gptResponse.message.content)
+      setGptContent(gptResponse.message.content);
      }}
       >
 
         Hit API
 
       </button>
+      <p>{gptContent}</p>
       </main>
     )
 }
