@@ -27,7 +27,6 @@ export default function Home(){
                 outputText += item.str + ' ';
               });
               setText(outputText);
-              console.log(outputText);
           });
         });
       });
@@ -50,6 +49,7 @@ export default function Home(){
       <button
       
      onClick={async() => {
+
       const response = await fetch("/api/gpt",{
         method: "POST",
         headers:{
@@ -60,12 +60,11 @@ export default function Home(){
         }),
       });
       const gptResponse = await response.json();
-      console.log("Response",gptResponse.message.content)
       setGptContent(gptResponse.message.content);
      }}
       >
 
-        Hit API
+        Summarise PDF
 
       </button>
       <p>{gptContent}</p>
