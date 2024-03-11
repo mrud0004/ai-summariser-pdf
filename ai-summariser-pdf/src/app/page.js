@@ -37,16 +37,20 @@ export default function Home(){
       <main className={styles.main} >
 
       <h1>AI Summariser</h1>
+
+      <label className = {styles.customFileUpload}> 
       <input type="file"
        id="file" 
        onChange={onFileChange}
        name = 'file'
 
         accept = ".pdf"/>
+        Choose a PDF file
+        </label>
 
 
 
-      <button
+      <button className = {styles.button}
       
      onClick={async() => {
 

@@ -1,0 +1,30 @@
+/* page.module.css */
+
+.customFileUpload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: #060606;
+    margin-right: 10px;
+  }
+  
+  .button {
+    background-color: #4CAF50; /* Green background */
+    border: none;
+    color: white; /* White text */
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s; /* Smooth transition for hover effect */
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50; /* Green border */
+  }
