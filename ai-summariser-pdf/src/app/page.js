@@ -8,6 +8,7 @@ export default function Home(){
     const [text, setText] = useState('');
     const [summaries, setSummaries] = useState('');
     const [keyValue, setKey] = useState('');
+    const [isLoading, setIsLoading] = useState(false)
 
     function onFileChange(event){
       const file = event.target.files[0];
@@ -52,6 +53,11 @@ export default function Home(){
       <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>AI PDF Summariser Tool</h1>
+
+      
+
+
+
 
       <label className = {styles.customFileUpload}> 
       <input type="file"
@@ -103,13 +109,7 @@ export default function Home(){
         return;
       }
 
-
-
-
-      
-
-      
-      
+      setIsLoading(true);
 
       const response = await fetch("/api/gpt",{
         method: "POST",
@@ -124,6 +124,7 @@ export default function Home(){
       const gptResponse = await response.json();
 
       setSummaries(gptResponse.gptResponses);
+      setIsLoading(false);
       
      }}
       >
@@ -131,7 +132,15 @@ export default function Home(){
 
       </button>
 
-      <button className = {styles.downloadButton} onClick={() => downloadPDF(summaries)}>Download Summarised PDF</button>
+      {isLoading ? (
+       <div className={styles.loader}></div>  
+      ) : (
+        summaries && (
+          <button className={styles.downloadButton} onClick={() => downloadPDF(summaries)}>
+            Download Summarised PDF
+          </button>
+        )
+      )}
       
       
       </main>
