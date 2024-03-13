@@ -96,3 +96,20 @@
   margin-bottom: 20px;
   height: 30px; 
 }
+
+
+.inputGroup {
+  display: flex; 
+  flex-direction: column; 
+  
+  
+}
+
+.APILink{
+  color:#000;
+  margin-bottom: 20px;
+  margin-left: 425px;
+  margin-top: -45px
+}
+
+

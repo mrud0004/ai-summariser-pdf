@@ -7,7 +7,7 @@ import Head from 'next/head';
 export default function Home(){
     const [text, setText] = useState('');
     const [summaries, setSummaries] = useState('');
-    const [key, setKey] = useState('');
+    const [keyValue, setKey] = useState('');
 
     function onFileChange(event){
       const file = event.target.files[0];
@@ -64,13 +64,20 @@ export default function Home(){
         
         </label>
 
+
+      <div className={styles.inputGroup}>
       <input
       type="text"
-      value={key}
+      value={keyValue}
       onChange={(e) => setKey(e.target.value)}
       placeholder="Enter your API key"
       className={styles.apiKeyInput}
       />  
+      <a href="https://www.maisieai.com/help/how-to-get-an-openai-api-key-for-chatgpt" target="_blank" rel="noopener noreferrer" className={styles.APILink}>
+      How to get your OpenAiKey
+        </a>
+      </div>
+
 
 
 
@@ -85,13 +92,19 @@ export default function Home(){
 
       }
 
-      if (!key.trim()){
+      if (!keyValue.trim()){
         alert("Please enter your API key")
         return;
 
       }
 
-      
+      if (keyValue.slice(0,3) !== "sk-"){ 
+        alert("Please enter a valid API key")
+        return;
+      }
+
+
+
 
       
 
@@ -105,7 +118,7 @@ export default function Home(){
         },
         body: JSON.stringify({
           textPages: text,
-          apiKeyUser: key
+          apiKeyUser: keyValue
         }),
       });
       const gptResponse = await response.json();
