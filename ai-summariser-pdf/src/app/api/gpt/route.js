@@ -4,11 +4,12 @@ import OpenAI from 'openai';
 
 export async function POST(req) {
 
-  const {textPages} = await req.json();
+  const { apiKeyUser, textPages } = await req.json();
+  
 
 
     const openai = new OpenAI({
-       apiKey:process.env.OPENAI_API_KEY
+       apiKey:apiKeyUser
     })
 
     let gptResponses = [];

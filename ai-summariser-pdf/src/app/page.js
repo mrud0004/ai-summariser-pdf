@@ -2,10 +2,12 @@
 import styles from "./page.module.css";
 import { useState } from "react";
 import {downloadPDF} from './pdfHandler';
+import Head from 'next/head';
 
 export default function Home(){
     const [text, setText] = useState('');
     const [summaries, setSummaries] = useState('');
+    const [key, setKey] = useState('');
 
     function onFileChange(event){
       const file = event.target.files[0];
@@ -46,6 +48,9 @@ export default function Home(){
     return (
       <main className={styles.main} >
 
+      <Head>
+      <link rel="icon" href="/favicon.ico" />
+      </Head>
       <h1>AI PDF Summariser Tool</h1>
 
       <label className = {styles.customFileUpload}> 
@@ -53,10 +58,19 @@ export default function Home(){
        id="file" 
        onChange={onFileChange}
        name = 'file'
+       
 
         accept = ".pdf"/>
-        Choose a PDF file
+        
         </label>
+
+      <input
+      type="text"
+      value={key}
+      onChange={(e) => setKey(e.target.value)}
+      placeholder="Enter your API key"
+      className={styles.apiKeyInput}
+      />  
 
 
 
@@ -65,13 +79,23 @@ export default function Home(){
      onClick={async() => {
 
       if (!text || !Array.isArray(text) || text.length === 0){
-        console.error("No Text to send")
+        alert("Please upload a file first.")
         return;
 
 
       }
 
-      console.log(text)
+      if (!key.trim()){
+        alert("Please enter your API key")
+        return;
+
+      }
+
+      
+
+      
+
+      
       
 
       const response = await fetch("/api/gpt",{
@@ -80,7 +104,8 @@ export default function Home(){
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          textPages: text
+          textPages: text,
+          apiKeyUser: key
         }),
       });
       const gptResponse = await response.json();
@@ -93,7 +118,7 @@ export default function Home(){
 
       </button>
 
-      <button onClick={() => downloadPDF(summaries)}>Download Summarised PDF</button>
+      <button className = {styles.downloadButton} onClick={() => downloadPDF(summaries)}>Download Summarised PDF</button>
       
       
       </main>

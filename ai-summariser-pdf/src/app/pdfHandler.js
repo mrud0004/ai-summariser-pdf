@@ -14,7 +14,7 @@ export const downloadPDF = (summaries) =>{
         }
 
         doc.setFontSize(16);
-        doc.text(`Page ${index + 1}`, 10, yPosition);
+        doc.text(`Page ${index + 1}:`, 10, yPosition);
         yPosition += 10;
 
         doc.setFontSize(12);
