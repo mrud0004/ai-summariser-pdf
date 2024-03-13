@@ -18,7 +18,7 @@ export async function POST(req) {
     for (const text of textPages){
 
     const completion = await openai.chat.completions.create({
-    messages: [{ role: "system", content: "You are a pdf summarising bot, and I will provide you with extensive text of a pdf,\
+    messages: [{ role: "system", content: "You are a pdf summarising bot, and I will provide you with extensive text of a document,\
      please summarise it in 150 words, focusing on key points with dot points. It should be very readable and intuitive." },
     {role:"user",content: text}
     ],

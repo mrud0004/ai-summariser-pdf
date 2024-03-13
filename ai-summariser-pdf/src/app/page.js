@@ -85,8 +85,6 @@ export default function Home(){
       });
       const gptResponse = await response.json();
 
-      console.log(gptResponse.gptResponses)
-
       setSummaries(gptResponse.gptResponses);
       
      }}
