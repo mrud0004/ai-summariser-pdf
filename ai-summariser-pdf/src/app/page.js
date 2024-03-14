@@ -58,7 +58,7 @@ export default function Home(){
 
 
 
-
+      <div className={styles.formWrapper}>
       <label className = {styles.customFileUpload}> 
       <input type="file"
        id="file" 
@@ -141,6 +141,8 @@ export default function Home(){
           </button>
         )
       )}
+
+      </div>
       
       
       </main>

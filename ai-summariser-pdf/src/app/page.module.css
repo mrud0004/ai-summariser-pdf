@@ -4,24 +4,30 @@
   display: none; 
 }
 
+.apiKeyInput::placeholder {
+  color: #f4f0f0; /* Placeholder text color */
+  opacity: 1;
+}
+
 
 .customFileUpload {
     border: 1px solid #ccc;
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
-    background-color: #0e0e0f;
+    background-color: #1b1b1b;
     margin-right: 10px;
-    align-self: flex-start;
-    margin-bottom: 20px;
+    
+    margin-bottom: 50px;
     margin-left: 20px;
     
+
   }
   
   .button {
-    background-color: #0d0e0d6f; 
+    background-color: #ffffff; 
     border: none;
-    color: white; 
+    color: rgb(0, 0, 0); 
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -30,25 +36,27 @@
     margin: 4px 2px;
     transition-duration: 0.4s; 
     cursor: pointer;
-    align-self: flex-start;
     margin-bottom: 20px;
     margin-left: 20px;
   }
   
   .button:hover {
-    background-color: rgb(1, 1, 1);
-    color: rgb(219, 220, 221);
+    background-color: rgb(48, 80, 86);
+    color: rgb(255, 255, 255);
     border: 2px solid #00000074; 
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   }
 
 
+
+
   .main {
-    background-color: #515c6e; 
+    background: radial-gradient(ellipse, #e7ecec, #959393);
     width: 100vw;
     height: 100vh;
     display: flex; 
     flex-direction: column; 
-
+  
   }
 
 
@@ -93,9 +101,11 @@
 
   margin-right: 320px;
   margin-left: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   height: 30px; 
   width: 380px;
+  background-color: #000000;
+  color: #f5f5f5;
 }
 
 
@@ -107,10 +117,10 @@
 }
 
 .APILink{
-  color:#000;
-  margin-bottom: 20px;
+  color:#100f0f;
+  margin-bottom: 50px;
   margin-left: 425px;
-  margin-top: -45px
+  margin-top: -75px
 }
 
 .loader {
@@ -129,3 +139,14 @@
 }
 
 
+
+.formWrapper {
+  padding: 20px;
+  background-color: #797878; 
+  border-radius: 10px; 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; 
+}
