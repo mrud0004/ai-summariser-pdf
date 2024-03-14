@@ -36,3 +36,4 @@ Next.js Documentation
 
 https://ai-summariser-pdf.vercel.app/
 (Note due to server restrictions from web hoster large pdf files will not load)
+(Personal OpenAi Api key also required)
