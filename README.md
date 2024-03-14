@@ -5,7 +5,7 @@ Welcome to the AI PDF Summarizer Tool, an innovative solution designed to enhanc
 
 # Features
 ### Efficient Summarization: 
-Utilize state-of-the-art AI to quickly summarise PDF documents, saving you time and effort.
+Utilise state-of-the-art AI to quickly summarise PDF documents, saving you time and effort.
 
 # Getting Started
 To get started with the AI PDF Summarizer Tool, follow these simple steps:
