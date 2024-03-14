@@ -1,7 +1,7 @@
 # AI PDF Summariser Tool
 
 ## Introduction
-Welcome to the AI PDF Summariser Tool, an innovative solution designed to enhance your productivity and streamline your workflow. This tool leverages the latest advancements in AI technology to efficiently summarise PDF documents, extracting key information and presenting it in a concise, readable format. Built with Next.js, this application demonstrates cutting-edge web development practices and offers a sleek, user-friendly interface.
+Welcome to the AI PDF Summariser Tool, an innovative solution designed to enhance your productivity and streamline your workflow. This tool leverages the latest advancements in AI technology to efficiently summarise PDF documents, extracting key information and presenting it in a concise, readable format. Built with Next.js, this application demonstrates cutting-edge web development practices and offers a user-friendly interface.
 
 # Features
 ### Efficient Summarisation: 
