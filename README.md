@@ -32,7 +32,7 @@ Navigate to http://localhost:3000 in your browser to see the application in acti
 Acknowledgements
 Next.js Documentation
 
-#Website version here:
+# Website version here:
 
 https://ai-summariser-pdf.vercel.app/
 (Note due to server restrictions from web hoster large pdf files will not load)
