@@ -88,13 +88,19 @@
 }
 
 .downloadButton {
-  background-color: #516aaf; 
-  color: rgb(247, 247, 247); 
+  background-color: #fdfdfd; 
+  color: rgb(0, 0, 0); 
   padding: 10px 24px; 
   border: none; 
   cursor: pointer; 
-  align-self: flex-start;
   margin-left: 20px;
+  transition-duration: 0.4s;
+}
+
+.downloadButton:hover {
+  background-color: #000000; /* Green */
+  color: rgb(255, 255, 255);
+  
 }
     
 .apiKeyInput{
@@ -104,7 +110,7 @@
   margin-bottom: 50px;
   height: 30px; 
   width: 380px;
-  background-color: #000000;
+  background-color:#1b1b1b;
   color: #f5f5f5;
 }
 
@@ -117,7 +123,7 @@
 }
 
 .APILink{
-  color:#100f0f;
+  color:#1b1b1b;
   margin-bottom: 50px;
   margin-left: 425px;
   margin-top: -75px
