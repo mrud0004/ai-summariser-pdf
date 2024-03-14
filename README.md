@@ -7,8 +7,23 @@ Welcome to the AI PDF Summariser Tool, an innovative solution designed to enhanc
 ### Efficient Summarisation: 
 Utilise state-of-the-art AI to quickly summarise PDF documents, saving you time and effort.
 
+
+# Website version here:
+
+https://ai-summariser-pdf.vercel.app/
+(Note due to server restrictions from web hoster large pdf files will not load)
+(Personal OpenAI Api key also required)
+
+
+# Demo:
+
+![Demo Animation](demo.gif)
+
+
 # Getting Started
 To get started with the AI PDF Summariser Tool, follow these simple steps:
+
+
 
 Clone the Repository
 
@@ -32,8 +47,6 @@ Navigate to http://localhost:3000 in your browser to see the application in acti
 Acknowledgements
 Next.js Documentation
 
-# Website version here:
 
-https://ai-summariser-pdf.vercel.app/
-(Note due to server restrictions from web hoster large pdf files will not load)
-(Personal OpenAi Api key also required)
+
+
