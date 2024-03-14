@@ -17,7 +17,7 @@ https://ai-summariser-pdf.vercel.app/
 
 # Demo:
 
-![Demo Animation](demo.gif)
+![Demo Animation](ai-demo.gif)
 
 
 # Getting Started
